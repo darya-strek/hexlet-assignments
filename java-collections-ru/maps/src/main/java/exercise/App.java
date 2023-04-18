@@ -22,7 +22,6 @@ public class App {
                 dictionary.replace(word, dictionary.get(word) + 1);
             }
         }
-
         return dictionary;
     }
 
@@ -33,12 +32,9 @@ public class App {
         }
 
         String result = "";
-
         for (String key : dictionary.keySet()) {
-
             result = result + "  " + key + ": " + dictionary.get(key) + "\n";
         }
-
         return "{\n" + result + "}";
     }
 }
