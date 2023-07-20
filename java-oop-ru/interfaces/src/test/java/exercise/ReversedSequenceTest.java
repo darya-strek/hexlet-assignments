@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ReversedSequenceTest {
 
     @Test
-    void ReversedSequenceTest1() {
+    void reversedSequenceTest1() {
         CharSequence text = new ReversedSequence("window");
 
         assertThat(text.toString()).isEqualTo("wodniw");
@@ -15,7 +15,7 @@ public class ReversedSequenceTest {
         assertThat(text.subSequence(1, 4)).isEqualTo("ind");
     }
     @Test
-    void ReversedSequenceTest2() {
+    void reversedSequenceTest2() {
         CharSequence text = new ReversedSequence("Patrikov");
 
         assertThat(text.toString()).isEqualTo("vokirtaP");
@@ -25,7 +25,7 @@ public class ReversedSequenceTest {
     }
 
     @Test
-    void ReservedSequenceTestEmpty() {
+    void reservedSequenceTestEmpty() {
         CharSequence text = new ReversedSequence("");
 
         assertThat(text.toString()).isEqualTo("");
