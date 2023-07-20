@@ -19,8 +19,8 @@ public class Flat implements Home {
         return area;
     }
 
-    public void setFlatArea(double area) {
-        this.area = area;
+    public void setFlatArea(double flatArea) {
+        this.area = flatArea;
     }
 
     public double getBalconyArea() {
