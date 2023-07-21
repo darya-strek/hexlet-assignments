@@ -33,7 +33,6 @@ class FileKVTest {
     // BEGIN
     @Test
     void inMemoryKVTest() {
-        String path = filepath.toString();
         KeyValueStorage storage = new FileKV(path, Map.of("key", "value"));
         assertThat(storage.get("key2", "default")).isEqualTo("default");
         assertThat(storage.get("key", "default")).isEqualTo("value");
