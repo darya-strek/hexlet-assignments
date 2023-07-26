@@ -36,8 +36,8 @@ public class PairedTag extends Tag {
 
     @Override
     public String toString() {
-        return super.toString() +
-                children.stream()
+        return super.toString()
+                + children.stream()
                         .map(child -> child.toString())
                         .collect(Collectors.joining())
                 + this.body + "</" + super.getTag() + ">";
