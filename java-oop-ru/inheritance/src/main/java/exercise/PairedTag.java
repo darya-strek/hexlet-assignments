@@ -6,11 +6,8 @@ import java.util.stream.Collectors;
 
 // BEGIN
 public class PairedTag extends Tag {
-    String tag;
-    Map<String, String> attributes;
     String body;
     List<Tag> children;
-
 
     public PairedTag(String tag, Map<String, String> attributes, String body, List<Tag> children) {
         super(tag, attributes);
@@ -36,7 +33,7 @@ public class PairedTag extends Tag {
 
     @Override
     public String toString() {
-        return super.toString()
+        return "<" + super.getTag() + super.stringAttributes() + ">"
                 + children.stream()
                         .map(child -> child.toString())
                         .collect(Collectors.joining())

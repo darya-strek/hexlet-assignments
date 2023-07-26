@@ -29,14 +29,14 @@ public class Tag {
         this.attributes = attributes;
     }
 
-    public String toString() {
+    public String stringAttributes() {
         String mapString = "";
         if (!attributes.isEmpty()) {
             mapString = " " + this.attributes.keySet().stream()
                     .map(key -> key + "=\"" + this.attributes.get(key) + "\"")
                     .collect(Collectors.joining(" "));
         }
-        return "<" + this.tag + mapString + ">";
+        return mapString;
     }
 }
 // END
