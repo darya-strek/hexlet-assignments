@@ -24,18 +24,17 @@ public final class App {
         app.get("/companies/{id}", ctx -> {
 
             var id = ctx.pathParamAsClass("id", String.class).get();
-            var item = 0;
 
-            for(var company : COMPANIES) {
-                if (company.get("id").equals(id)) {
-                    item = 1;
-                    ctx.json(company);
-                }
-            }
+            var company = COMPANIES.stream()
+                    .filter(c -> c.get("id").equals(id))
+                    .findFirst()
+                    .orElse(null);
 
-            if (item == 0) {
+            if (company == null) {
                 throw new NotFoundResponse("Company not found");
             }
+
+            ctx.json(company);
 
         });
         // END
