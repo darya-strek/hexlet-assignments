@@ -16,12 +16,7 @@ public class PostsController {
         var pageNumber = ctx.queryParamAsClass("page", Integer.class).getOrDefault(1);
         var posts = PostRepository.findAll(pageNumber, 5);
 
-        var previousPageNumber = pageNumber - 1;
-        var previousPage = "?page=" + previousPageNumber;
-        var nextPageNumber = pageNumber + 1;
-        var nextPage = "?page=" + nextPageNumber;
-
-        var page = new PostsPage(posts, previousPage, nextPage);
+        var page = new PostsPage(posts, pageNumber);
         ctx.render("posts/index.jte", model("page", page));
     }
 

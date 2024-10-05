@@ -15,8 +15,8 @@
                 @endif
                 <nav aria-label="Page navigation example">
                   <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="${page.getPreviousPage()}">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="${page.getNextPage()}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=${page.getPage() < 2 ? 1 : page.getPage() - 1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=${page.getPage() + 1}">Next</a></li>
                   </ul>
                 </nav>
             </main>
